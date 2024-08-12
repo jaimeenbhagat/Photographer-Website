@@ -1,0 +1,257 @@
+/* Global Styles */
+* {
+    box-sizing: border-box; /* Ensures padding and border are included in total width and height */
+}
+
+html, body {
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden; /* Prevents horizontal scrolling */
+    width: 100%;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background-color: #3A1078; /* Light Grey */
+}
+
+header {
+    background: url('https://via.placeholder.com/1600x900') no-repeat center center/cover;
+    height: 100vh;
+    background: #6431b091;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    position: relative;
+    width: 100%;
+}
+
+nav {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 10;
+}
+
+.logo {
+    font-size: 24px;
+    font-weight: 700;
+    color: #F7F7F8; /* Light Grey */
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+}
+
+.nav-links li {
+    margin: 0 10px;
+}
+
+.nav-links a {
+    color: #F7F7F8; /* Light Grey */
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.nav-links a:hover {
+    color: #3795BD; /* Teal Blue */
+}
+
+.hero h1 {
+    font-size: 48px;
+    margin-bottom: 10px;
+    animation: fadeIn 1.5s ease-out;
+    color: #F7F7F8; /* Light Grey */
+}
+
+.hero p {
+    font-size: 24px;
+    margin-bottom: 20px;
+    animation: fadeIn 2s ease-out;
+    color: #F7F7F8; /* Light Grey */
+}
+
+.btn {
+    background-color: #3795BD; /* Teal Blue */
+    color: #ff0000; /* Dark Purple */
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+    animation: fadeIn 2.5s ease-out;
+}
+
+.btn:hover {
+    background-color: #001aff; /* Medium Purple */
+}
+
+section {
+    padding: 60px 20px;
+    text-align: center;
+    width: 100%;
+}
+
+#gallery {
+    background-color: #ffffff;
+}
+
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 15px;
+}
+
+.gallery-item img {
+    width: 100%;
+    border-radius: 10px;
+    transition: transform 0.3s, box-shadow 0.3s;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.gallery-item img:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+#about {
+    background-color: #3A1078; /* Dark Purple */
+    color: #F7F7F8; /* Light Grey */
+}
+
+#contact {
+    background-color: #ffffff;
+}
+
+form {
+    max-width: 500px;
+    margin: 0 auto;
+    text-align: left;
+}
+
+form label {
+    display: block;
+    margin-bottom: 5px;
+    color: #333;
+}
+
+form input,
+form textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+form button {
+    background-color: #3795BD; /* Teal Blue */
+    color: #F7F7F8; /* Light Grey */
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+form button:hover {
+    background-color: #4E31AA; /* Medium Purple */
+}
+
+footer {
+    padding: 20px;
+    text-align: center;
+    background-color: #3A1078; /* Dark Purple */
+    color: #F7F7F8; /* Light Grey */
+    width: 100%;
+}
+
+.toggle-button {
+    display: none;
+    background-color: #3795BD; /* Teal Blue */
+    color: #3A1078; /* Dark Purple */
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.toggle-button:hover {
+    background-color: #4E31AA; /* Medium Purple */
+}
+
+.nav-links.active {
+    display: flex;
+    flex-direction: column;
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    justify-content: center;
+    align-items: center;
+    z-index: 20;
+}
+
+.modal img {
+    max-width: 90%;
+    max-height: 80%;
+    border-radius: 10px;
+}
+
+.modal-close {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    font-size: 40px;
+    color: white;
+    cursor: pointer;
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@media (max-width: 768px) {
+    .toggle-button {
+        display: block;
+    }
+
+    .nav-links {
+        display: none;
+    }
+
+    .nav-links.active {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .hero h1 {
+        font-size: 36px;
+    }
+
+    .hero p {
+        font-size: 20px;
+    }
+}
